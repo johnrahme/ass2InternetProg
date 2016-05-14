@@ -15,6 +15,8 @@
 	
 	<script>
 	// html demo
+        
+   
 	$('#frmt').jstree({
 		'core' : {
 			'data' : [

@@ -15,6 +15,12 @@
 	
 	<script>
 	// html demo
+     var testArray = new Array();
+    var children = new Array();
+    children.push({text:"node1", id: "3"},{text:"node2", id: "4"});
+    testArray.push({text: "fatherNode1", id: "5", children: children});
+    var nodes = JSON.stringify(testArray);
+    
 	$('#frmt').on("changed.jstree", function (e, data) {
 			if(data.selected.length) {
 				alert('The selected node is: ' + data.instance.get_node(data.selected[0]).id);
@@ -25,15 +31,7 @@
 				{
 					"text" : "Root node",
 					"id" : "cat1",
-					"children" : [
-						{
-							"text" : "Child node 1",
-                            "id" : "prod1"
-						},
-						{ "text" : "Child node 2",
-                            "id" : "prod2"
-                        }
-					]
+					"children" : testArray
 				}
 			]
 		}
